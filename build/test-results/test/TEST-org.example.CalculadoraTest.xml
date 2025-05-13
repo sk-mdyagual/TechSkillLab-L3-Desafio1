@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.CalculadoraTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-05-13T14:30:14" hostname="MacBook-Air-de-Andres.local" time="0.005">
-  <properties/>
-  <testcase name="divisionDeEnterosConCeroDebeSacarExepcion()" classname="org.example.CalculadoraTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
