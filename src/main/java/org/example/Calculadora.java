@@ -35,6 +35,9 @@ public class Calculadora {
     public static int dividir(int... numeros) {
         int resultado = numeros[0];
         for (int i = 1; i < numeros.length; i++) {
+            if (numeros[i] == 0) {
+                throw new ArithmeticException("No se puede dividir entre cero");
+            }
             resultado /= numeros[i];
         }
         return resultado;
@@ -68,6 +71,9 @@ public class Calculadora {
     public static double dividir(double... numeros) {
         double resultado = numeros[0];
         for (int i = 1; i < numeros.length; i++) {
+            if (numeros[i] == 0.0) {
+                throw new ArithmeticException("No se puede dividir entre cero");
+            }
             resultado /= numeros[i];
         }
         return resultado;
