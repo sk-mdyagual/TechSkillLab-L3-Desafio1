@@ -74,6 +74,15 @@ public class Calculadora {
     }
 
     //TO - DO: Validar el número de argumentos
+    public static void validate(int ... numeros){
+        if(numeros.length==0){
+            throw new IllegalArgumentException("Se requiere al menos dos números");
+        }
 
-
+       for(int numero: numeros){
+            if (numero==0){
+                throw new ArithmeticException("No se puede dividir entre cero");
+            }
+       }
+    }
 }
