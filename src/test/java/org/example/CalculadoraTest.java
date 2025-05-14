@@ -27,6 +27,7 @@ class CalculadoraTest {
         dividir_double = Calculadora.dividir(4.2,2.1);
     }
 
+    //------------------------Test con enteros-----------------------------
     @Test
     void sumar_enteros() {
         Assertions.assertEquals(5, suma);
@@ -52,7 +53,7 @@ class CalculadoraTest {
         Assertions.assertEquals(2, dividir);
     }
 
-
+    //------------------------Test con doubles-----------------------------
     @Test
     void testSumar_double() {
         Assertions.assertEquals(5.3, suma_double, delta);
