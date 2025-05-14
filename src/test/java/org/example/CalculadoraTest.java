@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 class CalculadoraTest {
+    double delta;
     int suma;
     int resta;
     int multiplicar;
@@ -15,6 +16,7 @@ class CalculadoraTest {
 
     @BeforeEach
     void setUp(){
+        delta = 0.0001;
         suma = Calculadora.sumar(2,3);
         resta = Calculadora.restar(3,2);
         multiplicar = Calculadora.multiplicar(2,3);
@@ -53,17 +55,17 @@ class CalculadoraTest {
 
     @Test
     void testSumar_double() {
-        Assertions.assertEquals(5.3, suma_double, 0.0001);
+        Assertions.assertEquals(5.3, suma_double, delta);
     }
 
     @Test
     void testRestar_double() {
-        Assertions.assertEquals(0.8, resta_double, 0.0001);
+        Assertions.assertEquals(0.8, resta_double, delta);
     }
 
     @Test
     void testMultiplicar_double() {
-        Assertions.assertEquals(11.55, multiplicar_double, 0.0001);
+        Assertions.assertEquals(11.55, multiplicar_double, delta);
     }
 
     @Test
