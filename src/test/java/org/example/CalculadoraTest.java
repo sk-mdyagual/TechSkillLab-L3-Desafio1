@@ -70,7 +70,7 @@ class CalculadoraTest {
 
     @Test
     void testDividir_double_por_cero() {
-        Assertions.assertThrows(ArithmeticException.class, () -> Calculadora.dividir(10,0));
+        Assertions.assertThrows(ArithmeticException.class, () -> Calculadora.dividir(10.1,0.0));
     }
 
     @Test
