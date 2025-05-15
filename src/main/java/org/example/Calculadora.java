@@ -1,11 +1,13 @@
 package org.example;
 
+import java.util.Arrays;
+
 /*
-* ¿Quieres crear tu clase de prueba para Calculadora? Tienes dos opciones:
-* 1. Clic derecho sobre la clase Calculadora: Generate > Test > Seleccionar los métodos a poner a prueba
-* 2. ALT + Enter > Create test > Seleccionar los métodos a poner a prueba
-* Cualquiera de las opciones te generará una clase de prueba en la carpeta test/java
-* */
+ * ¿Quieres crear tu clase de prueba para Calculadora? Tienes dos opciones:
+ * 1. Clic derecho sobre la clase Calculadora: Generate > Test > Seleccionar los métodos a poner a prueba
+ * 2. ALT + Enter > Create test > Seleccionar los métodos a poner a prueba
+ * Cualquiera de las opciones te generará una clase de prueba en la carpeta test/java
+ * */
 public class Calculadora {
     //------------------------Operaciones con enteros-----------------------------
     public static int sumar(int... numeros) {
@@ -33,6 +35,9 @@ public class Calculadora {
     }
 
     public static int dividir(int... numeros) {
+        if (Arrays.stream(numeros).anyMatch(numero -> numero == 0)) {
+            throw new IllegalArgumentException("No se puede dividir por cero");
+        }
         int resultado = numeros[0];
         for (int i = 1; i < numeros.length; i++) {
             resultado /= numeros[i];
@@ -66,6 +71,9 @@ public class Calculadora {
     }
 
     public static double dividir(double... numeros) {
+        if (Arrays.stream(numeros).anyMatch(numero -> numero == 0.0)) {
+            throw new IllegalArgumentException("No se puede dividir por cero");
+        }
         double resultado = numeros[0];
         for (int i = 1; i < numeros.length; i++) {
             resultado /= numeros[i];
@@ -74,6 +82,9 @@ public class Calculadora {
     }
 
     //TO - DO: Validar el número de argumentos
-
-
+    public static void validarArgumentos(int... numeros) {
+        if (numeros.length < 2) {
+            throw new IllegalArgumentException("Se requiere al menos 2 numeros");
+        }
+    }
 }
