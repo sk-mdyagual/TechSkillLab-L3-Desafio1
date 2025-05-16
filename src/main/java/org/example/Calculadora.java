@@ -73,7 +73,20 @@ public class Calculadora {
         return resultado;
     }
 
-    //TO - DO: Validar el número de argumentos
+    public static double dividirConValidacion(double... numeros){
+        if(numeros.length == 0){
+            throw new IllegalArgumentException("Debe proporcionar al menos un número");
+        }
+
+        double resultado = numeros[0];
+        for (int i = 1; i < numeros.length; i++) {
+            if (numeros[i] == 0){
+                throw new ArithmeticException("No se pue divir por cero");
+            }
+            resultado /= numeros[i];
+        }
+        return resultado;
+    }
 
 
 }
