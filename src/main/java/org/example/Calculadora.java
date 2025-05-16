@@ -33,8 +33,14 @@ public class Calculadora {
     }
 
     public static int dividir(int... numeros) {
+        if(numeros.length==0 || numeros.length==1){
+            throw new IllegalArgumentException("No hay numeros suficientes para realizar la división.");
+        }
         int resultado = numeros[0];
         for (int i = 1; i < numeros.length; i++) {
+            if(numeros[i]==0){
+                throw new IllegalArgumentException("No es posible dividir por cero");
+            }
             resultado /= numeros[i];
         }
         return resultado;
@@ -46,7 +52,7 @@ public class Calculadora {
         for (double numero : numeros) {
             suma += numero;
         }
-        return suma;
+        return Math.round(suma*10)/10.0;
     }
 
     public static double restar(double... numeros) {
@@ -66,8 +72,14 @@ public class Calculadora {
     }
 
     public static double dividir(double... numeros) {
+        if(numeros.length==0 || numeros.length==1){
+            throw new IllegalArgumentException("No hay numeros suficientes para realizar la división.");
+        }
         double resultado = numeros[0];
         for (int i = 1; i < numeros.length; i++) {
+            if(numeros[i]==0){
+                throw new IllegalArgumentException("No es posible dividir por cero");
+            }
             resultado /= numeros[i];
         }
         return resultado;
